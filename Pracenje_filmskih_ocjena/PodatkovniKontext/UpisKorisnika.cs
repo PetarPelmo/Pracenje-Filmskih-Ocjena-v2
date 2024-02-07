@@ -8,23 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Pracenje_filmskih_ocjena
+namespace Pracenje_filmskih_ocjena.PodatkovniKontext
 {
-    public partial class Filmovi : Form
+    public partial class UpisKorisnika : Form
     {
-        public Filmovi()
+        public UpisKorisnika()
         {
             InitializeComponent();
         }
 
-        private void edit_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            new Edit().Show();
+            
         }
 
-        private void add_Click(object sender, EventArgs e)
+        private void buttonIzadi_Click(object sender, EventArgs e)
         {
-            new Edit().Show();
+            Environment.Exit(0);
         }
     }
 }
