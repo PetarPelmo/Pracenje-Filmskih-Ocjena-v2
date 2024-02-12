@@ -73,6 +73,7 @@
     <Compile Include="Model\film.cs" />
     <Compile Include="Model\korisnik.cs" />
     <Compile Include="Model\ocjena.cs" />
+    <Compile Include="Model\PodatkovniKontekst.cs" />
     <Compile Include="Ocjena.cs">
       <SubType>Form</SubType>
     </Compile>
