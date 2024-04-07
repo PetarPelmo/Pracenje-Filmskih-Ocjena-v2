@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pracenje_filmskih_ocjena
 {
-    public class korisnik : IComparable
+    internal class korisnik: IComparable
     {
         private int id;
         private string ime;
@@ -14,26 +14,28 @@ namespace Pracenje_filmskih_ocjena
         private string email;
         private string username;
         private string password;
-        private DateTime godRodj;
+        public korisnik() { }
+
+        public korisnik(string ime, string prezime, string email, string username, string password, DateTime godRodj )
+        {
+            this.ime = ime;
+            this.prezime = prezime;
+            this.email = email;
+            this.username = username;
+            this.password = password;        }
 
         public int Id { get { return id; } set { id = value; } }
         public string Ime { get { return ime; } set { ime = value; } }
         public string Prezime { get { return prezime; } set { prezime = value; } }
         public string Email { get { return email; } set { email = value; } }
         public string Username { get { return username; } set { username = value; } }
-        public DateTime GodRodj { get { return godRodj; } set { godRodj = value; } }
         public string Password { get { return password; } set { password = value; } }
 
         public int CompareTo(object obj)
         {
             int rez = this.id.CompareTo(((korisnik)obj).id);
-           /* if (rez == 0) rez = this.username.CompareTo(((Korisnik)obj).username);
-            if (rez == 0) rez = this.email.CompareTo(((Korisnik)obj).email);
-           nije potrebno kompareati vise od ID-a*/
             return rez;
         }
-        public override string ToString()
-
-           => Username + ", " + Email + " -> " + Id.ToString();
+        public override string ToString() => Username + ", " + Email + " -> " + Id.ToString();
     }
 }

@@ -28,69 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.edit2 = new System.Windows.Forms.Button();
-            this.delete2 = new System.Windows.Forms.Button();
-            this.add3 = new System.Windows.Forms.Button();
-            this.listBox = new System.Windows.Forms.ListBox();
+            this.filterBox = new System.Windows.Forms.ComboBox();
+            this.searchBox = new System.Windows.Forms.TextBox();
+            this.edit = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // edit2
+            // filterBox
             // 
-            this.edit2.Location = new System.Drawing.Point(295, 123);
-            this.edit2.Name = "edit2";
-            this.edit2.Size = new System.Drawing.Size(89, 23);
-            this.edit2.TabIndex = 17;
-            this.edit2.Text = "Uredi";
-            this.edit2.UseVisualStyleBackColor = true;
-            this.edit2.Click += new System.EventHandler(this.edit2_Click);
+            this.filterBox.FormattingEnabled = true;
+            this.filterBox.Items.AddRange(new object[] {
+            "Godine",
+            "Ime"});
+            this.filterBox.Location = new System.Drawing.Point(357, 89);
+            this.filterBox.Margin = new System.Windows.Forms.Padding(2);
+            this.filterBox.Name = "filterBox";
+            this.filterBox.Size = new System.Drawing.Size(126, 21);
+            this.filterBox.TabIndex = 17;
             // 
-            // delete2
+            // searchBox
             // 
-            this.delete2.Location = new System.Drawing.Point(295, 199);
-            this.delete2.Name = "delete2";
-            this.delete2.Size = new System.Drawing.Size(89, 23);
-            this.delete2.TabIndex = 16;
-            this.delete2.Text = "Obriši";
-            this.delete2.UseVisualStyleBackColor = true;
+            this.searchBox.Location = new System.Drawing.Point(357, 40);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(2);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(126, 20);
+            this.searchBox.TabIndex = 16;
+            this.searchBox.Text = "Search";
             // 
-            // add3
+            // edit
             // 
-            this.add3.Location = new System.Drawing.Point(295, 56);
-            this.add3.Name = "add3";
-            this.add3.Size = new System.Drawing.Size(89, 23);
-            this.add3.TabIndex = 15;
-            this.add3.Text = "Dodaj";
-            this.add3.UseVisualStyleBackColor = true;
-            this.add3.Click += new System.EventHandler(this.add3_Click);
+            this.edit.Location = new System.Drawing.Point(588, 168);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(89, 58);
+            this.edit.TabIndex = 15;
+            this.edit.Text = "Uredi";
+            this.edit.UseVisualStyleBackColor = true;
             // 
-            // listBox
+            // delete
             // 
-            this.listBox.FormattingEnabled = true;
-            this.listBox.Location = new System.Drawing.Point(12, 12);
-            this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(197, 277);
-            this.listBox.TabIndex = 14;
+            this.delete.Location = new System.Drawing.Point(588, 244);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(89, 58);
+            this.delete.TabIndex = 14;
+            this.delete.Text = "Obriši";
+            this.delete.UseVisualStyleBackColor = true;
             // 
-            // Korisnik
+            // add
+            // 
+            this.add.Location = new System.Drawing.Point(588, 89);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(89, 57);
+            this.add.TabIndex = 13;
+            this.add.Text = "Dodaj";
+            this.add.UseVisualStyleBackColor = true;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.listBox2.Location = new System.Drawing.Point(67, 89);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(197, 277);
+            this.listBox2.TabIndex = 12;
+            // 
+            // Korisnici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.edit2);
-            this.Controls.Add(this.delete2);
-            this.Controls.Add(this.add3);
-            this.Controls.Add(this.listBox);
-            this.Name = "Korisnik";
+            this.Controls.Add(this.filterBox);
+            this.Controls.Add(this.searchBox);
+            this.Controls.Add(this.edit);
+            this.Controls.Add(this.delete);
+            this.Controls.Add(this.add);
+            this.Controls.Add(this.listBox2);
+            this.Name = "Korisnici";
             this.Text = "Korisnik";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button edit2;
-        private System.Windows.Forms.Button delete2;
-        private System.Windows.Forms.Button add3;
-        private System.Windows.Forms.ListBox listBox;
+        private System.Windows.Forms.ComboBox filterBox;
+        private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.Button edit;
+        private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.ListBox listBox2;
     }
 }

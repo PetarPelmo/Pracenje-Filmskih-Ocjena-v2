@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Pracenje_filmskih_ocjena
 {
-    public partial class Filmovi : Form
+    public partial class FilmoviAdder : Form
     {
-        public Filmovi()
+        public FilmoviAdder()
         {
             InitializeComponent();
-        }
-
-        private void edit_Click(object sender, EventArgs e)
-        {
-            new FilmoviAdder().Show();
-        }
-
-        private void add_Click(object sender, EventArgs e)
-        {
-            new FilmoviAdder().Show();
         }
     }
 }

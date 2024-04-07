@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Edit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Edit.Designer.cs">
-      <DependentUpon>Edit.cs</DependentUpon>
-    </Compile>
     <Compile Include="Filmovi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,13 +58,25 @@
     <Compile Include="Filmovi_i_korisnici.Designer.cs">
       <DependentUpon>Filmovi_i_korisnici.cs</DependentUpon>
     </Compile>
+    <Compile Include="FilmoviAdder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilmoviAdder.Designer.cs">
+      <DependentUpon>FilmoviAdder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Korisnici.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Korisnici.Designer.cs">
       <DependentUpon>Korisnici.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\film.cs" />
+    <Compile Include="Korisnici_adder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Korisnici_adder.Designer.cs">
+      <DependentUpon>Korisnici_adder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\filmovi.cs" />
     <Compile Include="Model\korisnik.cs" />
     <Compile Include="Model\ocjena.cs" />
     <Compile Include="Model\PodatkovniKontekst.cs" />
@@ -80,13 +86,19 @@
     <Compile Include="Ocjena.Designer.cs">
       <DependentUpon>Ocjena.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ocjena_adder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ocjena_adder.Designer.cs">
+      <DependentUpon>Ocjena_adder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Edit.resx">
-      <DependentUpon>Edit.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Filmovi.resx">
       <DependentUpon>Filmovi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilmoviAdder.resx">
+      <DependentUpon>FilmoviAdder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Filmovi_i_korisnici.resx">
       <DependentUpon>Filmovi_i_korisnici.cs</DependentUpon>
@@ -94,8 +106,14 @@
     <EmbeddedResource Include="Korisnici.resx">
       <DependentUpon>Korisnici.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Korisnici_adder.resx">
+      <DependentUpon>Korisnici_adder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ocjena.resx">
       <DependentUpon>Ocjena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ocjena_adder.resx">
+      <DependentUpon>Ocjena_adder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

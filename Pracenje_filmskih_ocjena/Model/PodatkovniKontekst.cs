@@ -9,20 +9,26 @@ namespace Pracenje_filmskih_ocjena.Model
 {
     internal class Podatkovni_kontekst
     {
-        private List<Filmovi> _filmovi;
-        public List<Filmovi> filmovi { get { return this._filmovi; } }
+        private List<Korisnici> _korisnici;
+        public List<Korisnici> Korisnici{ get { return this._korisnici; } }
 
-
-        private string datFilmovi = "datFilmovi.dat";
-
-
-        private List<Filmovi> UcitajZaposlenike()
+        public Podatkovni_kontekst()
         {
-            List<Filmovi> zaposlenici = new List<Filmovi>();
 
-            if (File.Exists(datFilmovi))
+            this._korisnici= UcitajKorisnike();
+
+        }
+
+        private string datKorisnici = "datFilmovi.dat";
+
+
+        public List<Korisnici> UcitajKorisnike()
+        {
+            List<Korisnici> korisnici = new List<Korisnici>();
+
+            if (File.Exists(datKorisnici))
             {
-                using (StreamReader sr = new StreamReader(datFilmovi))
+                using (StreamReader sr = new StreamReader(datKorisnici))
                 {
                     while (!sr.EndOfStream)
                     {
@@ -30,33 +36,45 @@ namespace Pracenje_filmskih_ocjena.Model
 
                         string[] polja = line.Split('|');
 
-                        Filmovi z = new Filmovi();
-                        z.Naziv = polja[0];
-                        z.Redatelj = polja[1];
-                        z.BoxOffice = int.Parse(polja[2]);
+                        Korisnici z = new Korisnici(polja[0], polja[1], int.Parse(polja[2]), polja[3]);
 
-                        zaposlenici.Add(z);
+                        korisnici.Add(z);
 
                     }
                 }
             }
 
-            return zaposlenici;
+            return korisnici;
 
         }
     }
 
-        public void SpremiFilm()
+    public void SpremiKorisnike(Korisnici kor)
+    {
+        this.korisnici.Add(kor);
+        using (StreamWriter sw = new StreamWriter(datKorisnici))
         {
-
-            using (StreamWriter sw = new StreamWriter(datFilmovi))
+            foreach (Korisnici z in this.korisnici)
             {
-                foreach (Filmovi z in this.filmovi)
-                {
-                    sw.WriteLine($"{z.Naziv}, {z.Redatelj}, {z.BoxOffice}");
-                }
-
+                sw.WriteLine($"{z.Ime}|{z.Prezime}|{z.Email}|{z.Username}|{z.Password}");
             }
+            sw.Close();
+        }
 
+    }
+
+    public void ObrisiKorisnike(Korisnici kor)
+        {
+        using (StreamWriter sw = new StreamWriter(datKorisnici))
+        {
+            foreach (Korisnici z in this.Korisnici)
+            {
+                if (z.Ime.Equals(kor.Ime) && z.Prezime.Equals(kor.Prezime) && z.Email.Equals(kor.Email) && z.Password.Equals(kor.Password))
+                {   continue;   }
+                else
+                {   sw.WriteLine($"{z.Ime}|{z.Prezime}|{z.Email}|{z.Username}|{z.Password}");   }
+            }
+            sw.Close();
         }
     }
+}
