@@ -21,3 +21,8 @@ C:\Users\Ucenik\Desktop\Pracenje-Filmskih-Ocjena-v2-master\Pracenje_filmskih_ocj
 C:\Users\Ucenik\Desktop\Pracenje-Filmskih-Ocjena-v2-master\Pracenje_filmskih_ocjena\obj\Debug\Pracenje_filmskih_ocjena.Properties.Resources.resources
 C:\Users\Ucenik\Desktop\Pracenje-Filmskih-Ocjena-v2-master\Pracenje_filmskih_ocjena\obj\Debug\Pracenje_filmskih_ocjena.csproj.GenerateResource.cache
 C:\Users\Ucenik\Desktop\Pracenje-Filmskih-Ocjena-v2-master\Pracenje_filmskih_ocjena\obj\Debug\Pracenje_filmskih_ocjena.csproj.CoreCompileInputs.cache
+C:\Users\Ucenik\Desktop\Pracenje-Filmskih-Ocjena-v2-master\Pracenje_filmskih_ocjena\bin\Debug\Pracenje_filmskih_ocjena.exe.config
+C:\Users\Ucenik\Desktop\Pracenje-Filmskih-Ocjena-v2-master\Pracenje_filmskih_ocjena\bin\Debug\Pracenje_filmskih_ocjena.exe
+C:\Users\Ucenik\Desktop\Pracenje-Filmskih-Ocjena-v2-master\Pracenje_filmskih_ocjena\bin\Debug\Pracenje_filmskih_ocjena.pdb
+C:\Users\Ucenik\Desktop\Pracenje-Filmskih-Ocjena-v2-master\Pracenje_filmskih_ocjena\obj\Debug\Pracenje_filmskih_ocjena.exe
+C:\Users\Ucenik\Desktop\Pracenje-Filmskih-Ocjena-v2-master\Pracenje_filmskih_ocjena\obj\Debug\Pracenje_filmskih_ocjena.pdb

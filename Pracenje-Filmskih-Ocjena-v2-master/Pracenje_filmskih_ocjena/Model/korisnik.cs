@@ -14,7 +14,7 @@ namespace Pracenje_filmskih_ocjena
         private string email;
         private string username;
         private string password;
-        public korisnik() { }
+        public korisnik(string text, string text1, string text2) { }
 
         public korisnik(string ime, string prezime, string email, string username, string password)
         {
