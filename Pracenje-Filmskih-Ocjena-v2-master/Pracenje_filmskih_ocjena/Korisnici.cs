@@ -14,7 +14,7 @@ namespace Pracenje_filmskih_ocjena
 {
     public partial class Korisnici : Form
     {
-        List<Model.korisnik> korisniciPrikaz = new List<Model.korisnik>();
+        List<korisnik> korisniciPrikaz = new List<korisnik>();
         Podatkovni_kontekst podatkovnikontekst;
         bool searched = false;
         public Korisnici()
@@ -33,12 +33,12 @@ namespace Pracenje_filmskih_ocjena
             Podatkovni_kontekst podatkovniKontekst = new Podatkovni_kontekst();
 
             listBox2.Items.Clear();
-            List<Model.korisnik> korisnici = podatkovniKontekst.UcitajKorisnike(z, z, z);
+            List<korisnik> korisnici = podatkovniKontekst.UcitajKorisnike();
 
 
             if (korisniciPrikaz.Count > 0 || searched)
             {
-                foreach (Model.korisnik kor in korisniciPrikaz)
+                foreach (korisnik kor in korisniciPrikaz)
                 {
                     listBox2.Items.Add(kor);
                 }
@@ -46,7 +46,7 @@ namespace Pracenje_filmskih_ocjena
 
             else
             {
-                foreach (Model.korisnik kor in korisnici)
+                foreach (korisnik kor in korisnici)
                 {
                     listBox2.Items.Add(kor);
                 }
@@ -76,9 +76,9 @@ namespace Pracenje_filmskih_ocjena
 
             podatkovnikontekst = new Podatkovni_kontekst();
 
-            List<Model.korisnik> KorisniciKomplet = podatkovnikontekst.UcitajKorisnike(z, z, z);
+            List<korisnik> KorisniciKomplet = podatkovnikontekst.UcitajKorisnike();
 
-            foreach (Model.korisnik kor in KorisniciKomplet)
+            foreach (korisnik kor in KorisniciKomplet)
                 if (kor.Prezime.Contains(searchBox.Text.ToLower())) korisniciPrikaz.Add(kor);
 
             addKor();
@@ -90,13 +90,13 @@ namespace Pracenje_filmskih_ocjena
 
             korisniciPrikaz.Clear();
             podatkovnikontekst = new Podatkovni_kontekst();
-            List<Model.korisnik> KorisniciFilter = this.podatkovnikontekst.UcitajKorisnike(z, z, z);
+            List<korisnik> KorisniciFilter = this.podatkovnikontekst.UcitajKorisnike();
 
             if (filterBox.SelectedItem.ToString() == "Godine")
             {
-                KorisniciFilter.Sort((z1, z2) => z2.Godine.CompareTo(z1.Godine));
+                KorisniciFilter.Sort((z1, z2) => z2.Username.CompareTo(z1.Username));
 
-                foreach (Model.korisnik kor in KorisniciFilter)
+                foreach (korisnik kor in KorisniciFilter)
                 {
                     korisniciPrikaz.Add(kor);
                 }
@@ -107,7 +107,7 @@ namespace Pracenje_filmskih_ocjena
 
                 KorisniciFilter.Sort((z1, z2) => z2.Ime.CompareTo(z1.Ime));
                 KorisniciFilter.Reverse();
-                foreach (Model.korisnik kor in KorisniciFilter)
+                foreach (korisnik kor in KorisniciFilter)
                 {
                     korisniciPrikaz.Add(kor);
                 }
@@ -123,12 +123,12 @@ namespace Pracenje_filmskih_ocjena
             else
             {
 
-                Model.korisnik kor = listBox2.SelectedItem as Model.korisnik;
+                korisnik kor = listBox2.SelectedItem as korisnik;
 
                 podatkovni.ObrisiKorisnike(kor);
 
             }
-            korisniciPrikaz = podatkovni.UcitajKorisnike(z, z, z);
+            korisniciPrikaz = podatkovni.UcitajKorisnike();
             addKor();
         }
 

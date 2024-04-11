@@ -10,19 +10,20 @@ namespace Pracenje_filmskih_ocjena.Model
     internal class Podatkovni_kontekst
     {
         private List<korisnik> _korisnici;
-        public List<korisnik> Korisnici { get { return this._korisnici; } }
+        public List<korisnik> Korisnici { get { return _korisnici; } }
 
         public Podatkovni_kontekst()
         {
 
-            this._korisnici = UcitajKorisnike(z, z, z);
+            _korisnici = UcitajKorisnike();
 
         }
 
         private string datKorisnici = "datFilmovi.dat";
 
+        
 
-        public List<korisnik> UcitajKorisnike(Korisnici z, Korisnici z, Korisnici z)
+        public List<korisnik> UcitajKorisnike()
         {
             List<korisnik> korisnici = new List<korisnik>();
 
@@ -36,9 +37,9 @@ namespace Pracenje_filmskih_ocjena.Model
 
                         string[] polja = line.Split('|');
 
-                        Korisnici kor = new Korisnici(polja[0], polja[1], polja[2], polja[3], polja[4]);
+                        korisnik zkor = new korisnik(polja[0], polja[1], polja[2], polja[3], polja[4]);
 
-                        korisnici.Add(kor);
+                        korisnici.Add(zkor);
 
                     }
                 }
@@ -49,12 +50,12 @@ namespace Pracenje_filmskih_ocjena.Model
         }
 
 
-        public void SpremiKorisnike(Korisnici kor)
+        public void SpremiKorisnike(korisnik kor)
         {
-            this.Korisnici.Add(kor);
+            Korisnici.Add(kor);
             using (StreamWriter sw = new StreamWriter(datKorisnici))
             {
-                foreach (Korisnici z in this.Korisnici)
+                foreach (korisnik z in Korisnici)
                 {
                     sw.WriteLine($"{z.Ime}|{z.Prezime}|{z.Email}|{z.Username}|{z.Password}");
                 }
@@ -67,7 +68,7 @@ namespace Pracenje_filmskih_ocjena.Model
         {
             using (StreamWriter sw = new StreamWriter(datKorisnici))
             {
-                foreach (korisnik z in this.Korisnici)
+                foreach (korisnik z in Korisnici)
                 {
                     if (z.Ime.Equals(kor.Ime) && z.Prezime.Equals(kor.Prezime) && z.Email.Equals(kor.Email) && z.Password.Equals(kor.Password))
                     { continue; }

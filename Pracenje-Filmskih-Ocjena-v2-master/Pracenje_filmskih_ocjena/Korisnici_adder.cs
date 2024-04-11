@@ -14,7 +14,7 @@ namespace Pracenje_filmskih_ocjena
     public partial class Korisnici_adder : Form
     {
         Podatkovni_kontekst podatkovniKontekst;
-        Model.korisnik korisnici_;
+        korisnik korisnici_;
         public Korisnici_adder()
         {
             InitializeComponent();
@@ -22,10 +22,14 @@ namespace Pracenje_filmskih_ocjena
             this.podatkovniKontekst = new Podatkovni_kontekst();
         }
 
-        private void zivotinja_add_Click(object sender, EventArgs e)
+        private void Korisnik_add_Click(object sender, EventArgs e)
         {
 
-            this.korisnici_ = new Model.korisnik(this.ime.Text, this.prezime.Text, this.email.Text, this.username.Text, this.password);
+            this.korisnici_ = new korisnik(this.ime.Text,
+                                           this.prezime.Text,
+                                           this.email.Text,
+                                           this.username.Text,
+                                           this.password.Text);
             this.podatkovniKontekst.SpremiKorisnike(this.korisnici_);
 
             Close();
